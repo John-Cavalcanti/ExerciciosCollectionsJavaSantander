@@ -12,6 +12,15 @@ public class OrdenacaoDePessoas {
         pessoas = new ArrayList<Pessoa>();
     }
 
+    public void mostrarPessoas()
+    {
+        for(Pessoa p: pessoas)
+        {
+            System.out.println("Nome : "+p.getNome()+"\t || Idade: "+p.getIdade()+"\t || Altura :"+p.getAltura());
+        }
+        System.out.println("\n");
+    }
+
     public List<Pessoa> getPessoas() {
         return pessoas;
     }
@@ -30,5 +39,10 @@ public class OrdenacaoDePessoas {
     public void ordenarPorIdade()
     {
         Collections.sort(pessoas);
+    }
+
+    public void ordenarPorAltura()
+    {
+        Collections.sort(pessoas, new ComparatorPorAltura());
     }
 }
